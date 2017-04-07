@@ -1,3 +1,17 @@
+# 说明
+和Percona moniotr plugin的最大区别就在于该监控支持多端口，并且端口自动发现，不需要配置。
+中文的详细说明，参照[链接](https://highdb.com/zabbix-%E5%A4%9A%E7%AB%AF%E5%8F%A3%E7%9B%91%E6%8E%A7-mysql/)。
+注意：template 导入之后显示的item和trigger为0，但是绑定host之后就正常。
+
+如果遇到如下启动agent失败
+[root@testhost zabbix]# systemctl start zabbix-agent
+Job for zabbix-agent.service failed because the control process exited with error code. See "systemctl status zabbix-agent.service" and "journalctl -xe" for details.
+
+执行命令journalctl -xe，根据提示分析就可以。
+
+如果遇到使用zabbix_get在zabbix server上测试失败，根据提示信息进行修复就可以。
+
+
 # zabbix_mysql
   Yet another mysql monitor for zabbix, like percona monitor for zabbix. only test in zabbix 2.2.
 
